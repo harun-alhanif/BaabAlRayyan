@@ -557,9 +557,37 @@ footer {
   outline: none;
   box-shadow: none;
   -webkit-tap-highlight-color: transparent;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 .tabs .btn:hover {
   background-color: var(--hero-btn-hover) !important;
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .tabs .btn {
+    min-width: 200px;
+    width: 100%;
+    max-width: 280px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    margin: 0 !important;
+  }
+}
+@media (max-width: 576px) {
+  .tabs .btn {
+    min-width: 180px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 .resources-page .card {
