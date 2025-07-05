@@ -199,11 +199,6 @@ main {
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   border-bottom: 4px solid var(--primary-color);
-  transition: all 0.3s ease;
-}
-.blog-preview .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 .blog-preview .card .card-body {
   padding: 2rem;
@@ -334,7 +329,6 @@ main {
 }
 .contact-section .contact-info .contact-item .contact-details .whatsapp-btn:hover {
   background-color: #128C7E;
-  color: white;
 }
 
 footer {
@@ -385,8 +379,6 @@ footer {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
   }
-}
-@media (max-width: 768px) {
   .contact-section {
     padding: 3rem 1rem;
     text-align: center;
@@ -412,6 +404,30 @@ footer {
   .contact-section .contact-info .contact-item .contact-details .whatsapp-btn {
     font-size: 0.95rem;
   }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  footer small {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  #subjectsCarousel .carousel-item {
+    padding: 0 20px;
+  }
+  #subjectsCarousel .carousel-control-prev,
+  #subjectsCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+  #subjectsCarousel .carousel-control-prev.carousel-control-prev,
+  #subjectsCarousel .carousel-control-next.carousel-control-prev {
+    left: -10px;
+  }
+  #subjectsCarousel .carousel-control-prev.carousel-control-next,
+  #subjectsCarousel .carousel-control-next.carousel-control-next {
+    right: -10px;
+  }
 }
 @media (min-width: 769px) {
   .contact-section .contact-info {
@@ -430,16 +446,112 @@ footer {
     margin-bottom: 0.5rem;
   }
 }
-@media (max-width: 768px) {
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  footer small {
-    display: block;
-    padding: 0.5rem 1rem;
-  }
+#subjectsCarousel {
+  padding: 2rem 0;
 }
+#subjectsCarousel .carousel-item {
+  padding: 0 50px;
+}
+#subjectsCarousel .carousel-control-prev,
+#subjectsCarousel .carousel-control-next {
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+#subjectsCarousel .carousel-control-prev:hover,
+#subjectsCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: var(--primary-hover);
+}
+#subjectsCarousel .carousel-control-prev.carousel-control-prev,
+#subjectsCarousel .carousel-control-next.carousel-control-prev {
+  left: -20px;
+}
+#subjectsCarousel .carousel-control-prev.carousel-control-next,
+#subjectsCarousel .carousel-control-next.carousel-control-next {
+  right: -20px;
+}
+#subjectsCarousel .carousel-control-prev .carousel-control-prev-icon,
+#subjectsCarousel .carousel-control-prev .carousel-control-next-icon,
+#subjectsCarousel .carousel-control-next .carousel-control-prev-icon,
+#subjectsCarousel .carousel-control-next .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+#subjectsCarousel .carousel-indicators {
+  margin-bottom: -30px;
+}
+#subjectsCarousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  opacity: 0.5;
+  border: none;
+  margin: 0 5px;
+}
+#subjectsCarousel .carousel-indicators button.active {
+  opacity: 1;
+  background-color: var(--primary-hover);
+}
+#subjectsCarousel .card {
+  min-height: 350px;
+}
+#subjectsCarousel .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#subjectsCarousel .card .card-body .card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+#subjectsCarousel .card .card-body .course-info {
+  margin-top: auto;
+}
+
+.course-info {
+  background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.course-info .info-item {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.course-info .info-item:last-child {
+  margin-bottom: 0;
+}
+.course-info .info-item i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  width: 16px;
+  text-align: center;
+}
+.course-info .info-item .info-label {
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0;
+}
+.course-info .info-item .info-value {
+  color: var(--text-color);
+  font-weight: 500;
+}
+.course-info .info-item .info-value.price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .tabs .btn {
   min-width: 120px;
   outline: none;
@@ -484,6 +596,73 @@ footer {
 }
 .resources-page .card a.btn {
   font-size: 0.9rem;
+}
+
+.subjects-swiper .card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid var(--primary-color);
+  height: 100%;
+}
+.subjects-swiper .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+.subjects-swiper .card .card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.subjects-swiper .card .card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.subjects-swiper .card .card-text {
+  color: var(--text-color);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+.subjects-swiper .course-info {
+  background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: auto;
+  border-left: 4px solid var(--primary-color);
+}
+.subjects-swiper .course-info .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.subjects-swiper .course-info .info-item:last-child {
+  margin-bottom: 0;
+}
+.subjects-swiper .course-info .info-item i {
+  color: var(--primary-color);
+  width: 20px;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+.subjects-swiper .course-info .info-item .info-label {
+  font-weight: 500;
+  color: var(--text-color);
+  margin-right: 0.5rem;
+}
+.subjects-swiper .course-info .info-item .info-value {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.subjects-swiper .course-info .info-item .info-value.price {
+  color: #28a745;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

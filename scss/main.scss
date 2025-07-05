@@ -1,4 +1,5 @@
-// المتغيرات الرئيسية
+@charset "UTF-8";
+
 :root {
   --primary-color: #6CA6C1;
   --primary-hover: #548BAA;
@@ -14,15 +15,11 @@
   --hero-btn-hover: #2D6B8F;
   --footer-bg: #253947;
   --icon-color: #6CA6C1;
-
-  // اختياري لو حبيت تضيف لهجة لون ثانوي للتمييز
-  --accent-color: #F9B857; // ذهبي مائل للبيج أو أي لون فاتح تحبه
+  --accent-color: #F9B857;
 }
 
-// النمط العام
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background-color: var(--light-bg);
   line-height: 1.6;
@@ -51,7 +48,6 @@ main {
   flex: 1;
 }
 
-// ✅ تنسيق القائمة العلوية (Navbar)
 .navbar {
   background-color: var(--primary-color) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -61,10 +57,6 @@ main {
     font-weight: 700;
     font-size: 1.5rem;
     transition: color 0.3s ease;
-
-    // &:hover {
-    //   color: var(--secondary-hover) !important;
-    // }
   }
 
   .nav-link {
@@ -73,8 +65,7 @@ main {
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 
-    &:hover,
-    &.active {
+    &:hover, &.active {
       color: var(--secondary-color) !important;
     }
   }
@@ -88,20 +79,21 @@ main {
   }
 }
 
-// قسم البطل (Hero Section)
 .hero-section {
   position: relative;
-  background: url('../assets/images/Doc1_page-0001.jpg') no-repeat center center;
+  background: url("../assets/images/Doc1_page-0001.jpg") no-repeat center center;
   background-size: contain;
   color: var(--secondary-color);
   padding: 6rem 2rem;
 
-  // نضيف طبقة تغطية عشان نسوي شفافية خفيفة على الخلفية
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-color: rgba(37, 57, 71, 0.75); // نفس لون الفوتر بتدرج شفاف
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(37, 57, 71, 0.75);
     z-index: 0;
   }
 
@@ -137,7 +129,6 @@ main {
     }
   }
 
-  // استجابة للأجهزة المختلفة
   @media (max-width: 768px) {
     h1 {
       font-size: 1.8rem;
@@ -149,15 +140,13 @@ main {
   }
 }
 
-// قسم الحديث (Hadith Section)
 .hadith-section {
   background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
   padding: 6rem 2rem;
   position: relative;
 
-  // رمز زخرفي في الخلفية
   &::before {
-    content: '❝';
+    content: "❝";
     position: absolute;
     top: 2rem;
     right: 10%;
@@ -177,7 +166,7 @@ main {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 
     .arabic-text {
-      font-family: 'Traditional Arabic', serif;
+      font-family: "Traditional Arabic", serif;
       font-size: 2.5rem;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
@@ -207,7 +196,6 @@ main {
   }
 }
 
-// قسم المدونات (Blog Preview)
 .blog-preview {
   background: var(--light-bg);
   padding: 5rem 0;
@@ -219,7 +207,7 @@ main {
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 80px;
       height: 3px;
@@ -234,12 +222,6 @@ main {
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     border-bottom: 4px solid var(--primary-color);
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
 
     .card-body {
       padding: 2rem;
@@ -250,11 +232,11 @@ main {
       .card-title {
         color: var(--primary-color);
         font-weight: 700;
-        font-size: 1.4rem; // خففته شوي عشان ما ينزل سطر ثاني
+        font-size: 1.4rem;
         margin-bottom: 1rem;
         padding-bottom: 0.4rem;
         border-bottom: 2px solid var(--primary-color);
-        min-height: 50px; // ثبتت الطول عشان يصير موحد حتى لو تغيرت العناوين
+        min-height: 50px;
         text-align: center;
       }
 
@@ -269,7 +251,6 @@ main {
   }
 }
 
-// قسم مقاطع اليوتيوب (YouTube Section)
 .youtube-lessons {
   padding: 5rem 0;
 
@@ -280,7 +261,7 @@ main {
     text-align: center;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 80px;
       height: 3px;
@@ -327,7 +308,6 @@ main {
   }
 }
 
-// تنسيق قسم التواصل
 .contact-section {
   background-color: var(--light-bg);
   padding: 5rem 0;
@@ -342,8 +322,8 @@ main {
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    max-width: 600px; // حديت العرض
-    margin: 0 auto; // وسطنته بالنص
+    max-width: 600px;
+    margin: 0 auto;
 
     .contact-item {
       display: flex;
@@ -391,7 +371,6 @@ main {
 
           &:hover {
             background-color: #128C7E;
-            color: white;
           }
         }
       }
@@ -399,7 +378,6 @@ main {
   }
 }
 
-// تنسيق الفوتر
 footer {
   background-color: var(--footer-bg) !important;
   color: var(--secondary-color);
@@ -418,136 +396,24 @@ footer {
 //     color: var(--dark-bg);
 //   }
 // }
+
 .btn-outline-primary {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  
+
   &:hover {
     background-color: var(--hero-btn-hover);
     border-color: var(--hero-btn-hover);
   }
 }
+
 .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  
+
   &:hover {
     background-color: var(--hero-btn-hover);
     border-color: var(--hero-btn-hover);
-  }
-}
-
-// تجاوب الصفحة
-
-// قسم آخر المدونات
-@media (max-width: 768px) {
-  .blog-preview {
-    padding: 3rem 1rem;
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    .card {
-      margin-bottom: 2rem;
-
-      .card-body {
-        padding: 1.5rem;
-
-        .card-title {
-          font-size: 1.3rem;
-        }
-
-        .card-text {
-          font-size: 0.95rem;
-        }
-
-        .btn-primary {
-          font-size: 0.9rem;
-          padding: 0.6rem 1.2rem;
-        }
-      }
-    }
-  }
-}
-// قسم التواصل
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 3rem 1rem;
-    text-align: center;
-
-    .contact-info {
-      margin-bottom: 2rem;
-      align-items: center;
-
-      .contact-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-
-        i {
-          font-size: 2rem;
-          margin-bottom: 0.5rem;
-          margin-right: 0;
-        }
-
-        .contact-details {
-          h5 {
-            font-size: 1rem;
-          }
-
-          a,
-          .whatsapp-btn {
-            font-size: 0.95rem;
-          }
-        }
-      }
-    }
-
-    // .form-title {
-    //   font-size: 1.2rem;
-    //   margin-bottom: 1.5rem;
-    // }
-
-    // .contact-form {
-    //   .btn-primary {
-    //     font-size: 1rem;
-    //     padding: 0.8rem 2rem;
-    //   }
-    // }
-  }
-}
-@media (min-width: 769px) {
-  .contact-section {
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      .contact-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-
-        i {
-          margin-right: 0;
-          margin-bottom: 0.5rem;
-        }
-      }
-    }
-  }
-}
-// تنسيق الفوتر
-@media (max-width: 768px) {
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-
-    small {
-      display: block;
-      padding: 0.5rem 1rem;
-    }
   }
 }
 
@@ -602,19 +468,260 @@ footer {
 //     }
 //   }
 // }
+// Media Queries
+@media (max-width: 768px) {
+  .blog-preview {
+    padding: 3rem 1rem;
 
-.tabs {
-  .btn {
-    min-width: 120px;
-    &:hover {
-      background-color: var(--hero-btn-hover) !important;
+    h2 {
+      font-size: 1.5rem;
     }
-    outline: none; // يشيل تحديد الحدود الأزرق
-    box-shadow: none; // يلغي أي ظل أثناء التركيز أو الضغط
-    -webkit-tap-highlight-color: transparent; // يشيل لون اللمسة بالأجهزة اللمسية مثل الجوالات
+
+    .card {
+      margin-bottom: 2rem;
+
+      .card-body {
+        padding: 1.5rem;
+
+        .card-title {
+          font-size: 1.3rem;
+        }
+
+        .card-text {
+          font-size: 0.95rem;
+        }
+
+        .btn-primary {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.2rem;
+        }
+      }
+    }
+  }
+
+  .contact-section {
+    padding: 3rem 1rem;
+    text-align: center;
+
+    .contact-info {
+      margin-bottom: 2rem;
+      align-items: center;
+
+      .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          margin-right: 0;
+        }
+
+        .contact-details {
+          h5 {
+            font-size: 1rem;
+          }
+
+          a,
+          .whatsapp-btn {
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+
+    small {
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  #subjectsCarousel {
+    .carousel-item {
+      padding: 0 20px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 35px;
+      height: 35px;
+
+      &.carousel-control-prev {
+        left: -10px;
+      }
+
+      &.carousel-control-next {
+        right: -10px;
+      }
+    }
   }
 }
 
+@media (min-width: 769px) {
+  .contact-section {
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        i {
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Subjects Carousel
+#subjectsCarousel {
+  padding: 2rem 0;
+
+  .carousel-item {
+    padding: 0 50px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      background-color: var(--primary-hover);
+    }
+
+    &.carousel-control-prev {
+      left: -20px;
+    }
+
+    &.carousel-control-next {
+      right: -20px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .carousel-indicators {
+    margin-bottom: -30px;
+
+    button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      opacity: 0.5;
+      border: none;
+      margin: 0 5px;
+
+      &.active {
+        opacity: 1;
+        background-color: var(--primary-hover);
+      }
+    }
+  }
+
+  .card {
+    min-height: 350px;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .card-text {
+        flex-grow: 1;
+        margin-bottom: 1rem;
+      }
+
+      .course-info {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+// Course Info
+.course-info {
+  background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+
+  .info-item {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      color: var(--primary-color);
+      margin-right: 0.5rem;
+      width: 16px;
+      text-align: center;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--heading-color);
+      margin: 0;
+    }
+
+    .info-value {
+      color: var(--text-color);
+      font-weight: 500;
+
+      &.price {
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// Tabs
+.tabs {
+  .btn {
+    min-width: 120px;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      background-color: var(--hero-btn-hover) !important;
+    }
+  }
+}
+
+// Resources Page
 .resources-page {
   .card {
     border-radius: 0.75rem;
@@ -641,7 +748,7 @@ footer {
       font-size: 1.2rem;
       font-weight: 700;
       color: #222;
-      margin-bottom: 0.5rem; // مسافة بين العنوان والوصف
+      margin-bottom: 0.5rem;
       line-height: 1.4;
     }
 
@@ -654,6 +761,87 @@ footer {
 
     a.btn {
       font-size: 0.9rem;
+    }
+  }
+}
+
+// Swiper Subjects Carousel
+.subjects-swiper {
+  .card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: none;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid var(--primary-color);
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-title {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-text {
+      color: var(--text-color);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .course-info {
+    background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: auto;
+    border-left: 4px solid var(--primary-color);
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      i {
+        color: var(--primary-color);
+        width: 20px;
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .info-label {
+        font-weight: 500;
+        color: var(--text-color);
+        margin-right: 0.5rem;
+      }
+
+      .info-value {
+        color: var(--primary-color);
+        font-weight: 600;
+
+        &.price {
+          color: #28a745;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }
